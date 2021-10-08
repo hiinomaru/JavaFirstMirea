@@ -20,8 +20,9 @@ public class Task1 {
         for(int i=0; i < args.length; i++)
             System.out.println("args[" + i + "] : " + args[i]);
         System.out.println("№5");
-        for(int i=1; i < 10; i++){
-            System.out.print(1/i + "   ");
+        for(double i=1; i < 10; i++){
+            double r = (1/i);
+            System.out.print(r + "   ");
         }
         System.out.println();
         System.out.println("№6");
