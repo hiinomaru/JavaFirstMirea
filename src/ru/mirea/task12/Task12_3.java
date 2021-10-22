@@ -20,6 +20,7 @@ public class Task12_3 {
 
         merge(a, l, r, mid, n - mid);
     }
+
     public static void merge(
             Student[] a, Student[] l, Student[] r, int left, int right) {
 
@@ -59,7 +60,7 @@ public class Task12_3 {
             Student x = arr2[i];
             System.out.println(x.IDNumber + "  " + x.score + "  " + x.name);
         }
-        System.out.println("Sorted:");
+        System.out.println("Mergesort Sorted:");
         Student[] Marr = new Student[20];
         merge(Marr, arr1, arr2, 10,10);
         mergeSort(Marr, Marr.length);

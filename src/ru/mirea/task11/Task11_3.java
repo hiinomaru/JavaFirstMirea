@@ -3,44 +3,58 @@ package ru.mirea.task11;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
-public class Task11_3 extends JFrame implements MouseListener{
-    Label l;
-    private JPanel Top = new JPanel();
-    private JPanel Bottom = new JPanel();
-    Task11_3(){
-        addMouseListener(this);
-
-        l=new Label();
-        l.setBounds(20,50,100,20);
-        add(l);
-        add(Top, BorderLayout.NORTH);
-        add(Bottom, BorderLayout.SOUTH);
-        setSize(300,300);
-        setLayout(null);
-        setVisible(true);
-    }
-    public void mouseClicked(MouseEvent e) {
-        l.setText("Mouse Clicked");
-    }
-    public void mouseEntered(MouseEvent e) {
-        if (e.getSource() == this.Top)
-            l.setText("Mouse Entered Top");
-        else if (e.getSource() == this.Bottom)
-            l.setText("Mouse Entered Bottom");
-    }
-    public void mouseExited(MouseEvent e) {
-        java.awt.Point p = new java.awt.Point(e.getLocationOnScreen());
-        SwingUtilities.convertPointFromScreen(p, e.getComponent());
-        if(e.getComponent().contains(p)) {return;}
-            l.setText("Mouse Exited");
-    }
-    public void mousePressed(MouseEvent e) {
-        l.setText("Mouse Pressed");
-    }
-    public void mouseReleased(MouseEvent e) {
-        l.setText("Mouse Released");
-    }
+public class Task11_3 extends JLabel{
     public static void main(String[] args) {
-        Task11_3 MY = new Task11_3();
+        JLabel R = new JLabel("red");
+        R.setBackground(Color.RED);
+        R.setOpaque(true);
+        JLabel G = new JLabel("green");
+        G.setBackground(Color.GREEN);
+        G.setOpaque(true);
+        JLabel B = new JLabel("blue");
+        B.setBackground(Color.BLUE);
+        B.setOpaque(true);
+        JLabel Y = new JLabel("yellow");
+        Y.setBackground(Color.YELLOW);
+        Y.setOpaque(true);
+        JFrame main = new JFrame();
+        main.setSize(600,600);
+        GridLayout layout = new GridLayout(2, 2);
+        main.setLayout(layout);
+        main.add(R);
+        main.add(G);
+        main.add(B);
+        main.add(Y);
+        main.setVisible(true);
+        MouseListener EEE = new MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                JOptionPane.showMessageDialog(null, ((JLabel)e.getSource()).getText());
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+
+            }
+        };
+        R.addMouseListener(EEE);
+        G.addMouseListener(EEE);
+        B.addMouseListener(EEE);
+        Y.addMouseListener(EEE);
     }
 }

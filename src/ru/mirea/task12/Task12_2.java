@@ -30,6 +30,7 @@ public class Task12_2 {
         if (high > i)
             quickSort(array, i, high);
     }
+
     public static void main(String[] args) {
         Student[] arr = new Student[30];
         for (int i = 0; i < arr.length; i++){
@@ -39,7 +40,7 @@ public class Task12_2 {
             Student x = arr[i];
             System.out.println(x.IDNumber + "  " + x.score + "  " + x.name);
         }
-        System.out.println("Sorted:");
+        System.out.println("Quicksort Sorted:");
         quickSort(arr, 0, arr.length-1);
         for (int i = 0; i < arr.length; i++){
             Student x = arr[i];

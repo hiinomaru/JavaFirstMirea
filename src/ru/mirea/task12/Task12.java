@@ -21,7 +21,7 @@ public class Task12 {
             }
             arr[j + 1] = key;
         }
-        System.out.println("Sorted:");
+        System.out.println(" Insertion sort Sorted:");
         for (int i = 0; i < arr.length; i++){
             Student x = arr[i];
             System.out.println(x.IDNumber + "  " + x.score + "  " + x.name);
